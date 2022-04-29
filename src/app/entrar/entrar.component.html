@@ -3,22 +3,23 @@
     <div class="col-md-6">
       <div class="row d-flex justify-content-center ">
         <div class="col-md-8">
-          <h1 class="text-center">Entrar</h1>
+          <h1 class="text-center text-dark mb-5">Entrar</h1>
 
           <form>
             <div class="form-group">
-              <label for="">Nome do usuário</label>
-              <input type="text" class="form-control">
+              <label for="user">Nome do usuário</label>
+                <input type="text fa fa-envelope" class="form-control" name="user">
             </div>
             <div class="form-group">
               <label for="">Senha</label>
               <input type="password" class="form-control">
             </div>
-            <button class="btn btn-outline-dark w-50 d-block mx-auto">Entrar</button>
+            <button class="btn btn-outline-dark w-100 d-block mx-auto">Entrar</button>
           </form>
 
           <hr>
-          <p class="text-center">Não tem cadastro ainda? <a routerLink='/cadastrar' class="text-dark">Cadastre-se</a></p>
+          <p class="text-center">Não tem cadastro ainda? <a routerLink='/cadastrar' class="text-dark"><strong>Cadastre-se</strong></a>
+          </p>
         </div>
       </div>
     </div>

@@ -1,6 +1,29 @@
 #imgBg {
-    background-image: url(https://i.imgur.com/xrJ9G3N.jpg);
+    background-image: url(src/assets/celebration.png);
     min-height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
+}
+
+button{
+    transition: 2s;
+}
+
+input:focus{
+    border-color: #02020297;
+    box-shadow: none;
+}
+
+@media (max-width: 766px){
+    #imgBg{
+        display: none;
+    }
+
+   .container-fluid{
+       position: absolute;
+       top: 50%;
+       left: 50%;
+       transform: translate(-50%, -50%);
+   }
 }
