@@ -38,10 +38,7 @@
     box-shadow: none;
 }
 
-.first-content .row .col-md-4 .btn-postagem:hover{
-    background-color: #7D89E7;
+.first-content .row .col-md-4 button:hover{
+    transform: scale(1.05);
 }
 
-.first-content .row .col-md-4 .btn-ver:hover{
-    background-color: transparent;
-}
