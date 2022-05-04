@@ -1,0 +1,47 @@
+.container-fluid{
+    background-color: #000;
+}
+
+.first-content .row .col-md-4 h1{
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.first-content .row .col-md-4 span{
+    color: #7D89E7;
+}
+
+.first-content .row .col-md-4 button{
+    width: 150px;
+    transition: 1s;
+}
+
+.first-content .row .col-md-4 .btn-postagem{
+    outline: none;
+    border: 3px solid #7D89E7;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #fff;
+    font-weight: 500;
+}
+
+.first-content .row .col-md-4 .btn-ver{
+    outline: none;
+    border: 3px solid #7D89E7;
+    border-radius: 5px;
+    background-color: #7D89E7;
+    color: #fff;
+    font-weight: 500;
+}
+
+.first-content .row .col-md-4 button:focus{
+    box-shadow: none;
+}
+
+.first-content .row .col-md-4 .btn-postagem:hover{
+    background-color: #7D89E7;
+}
+
+.first-content .row .col-md-4 .btn-ver:hover{
+    background-color: transparent;
+}
