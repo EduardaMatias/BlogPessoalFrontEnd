@@ -9,37 +9,37 @@
           <form>
             <div class="form-group">
               <label for="">Nome</label>
-              <input type="text" class="form-control">
+              <input [(ngModel)]='usuario.nome' type="text" class="form-control" name="nome">
             </div>
             <div class="form-group">
               <label for="">Usuario</label>
-              <input type="text" class="form-control">
+              <input [(ngModel)]='usuario.usuario' type="text" class="form-control" name="usuario">
             </div>
             <div class="form-group d-flex flex-column">
               <label for="">Foto</label>
-              <input type="file" accept=".png, .jpg, .jpeg">
+              <input [(ngModel)]='usuario.foto' type="text" class="form-control" name="foto">
             </div>
             <div class="form-group">
-                <label for="">Senha</label>
-                <input type="password" class="form-control">
+              <label for="">Senha</label>
+              <input (input)='confirmarSenha($event)' type="password" class="form-control" name="senha">
             </div>
             <div class="form-group">
-                <label for="">Confirmar senha</label>
-                <input type="password" class="form-control">
+              <label for="">Confirmar senha</label>
+              <input [(ngModel)]='usuario.senha' type="password" class="form-control" name="confirmSenha">
             </div>
             <div class="form-group">
-                <label for="">Tipo de usuário</label>
-                <select name="tipo" id="tipo" class="form-control">
-                    <option>Selecione um tipo de usuário</option>
+              <label for="">Tipo de usuário</label>
+              <select name="tipo" id="tipo" class="form-control" (change)='tipoUsuario($event)'>
+                <option>Selecione um tipo de usuário</option>
                 <option value="normal">Normal</option>
                 <option value="admnistrador">Administrador</option>
-                </select>   
+              </select>
             </div>
-            
+
             <div class="d-flex justify-content-center">
-                <button class="btn btn-outline-danger w-50 d-block mr-4" routerLink='/entrar'>Cancelar</button>
-                <button class="btn btn btn-outline-success w-50 d-block">Cadastrar</button>
-            </div>           
+              <button class="btn btn-outline-danger w-50 d-block mr-4" routerLink='/entrar'>Cancelar</button>
+              <button class="btn btn-outline-success w-50 d-block" (click)="cadastrar()">Cadastrar</button>
+            </div>
           </form>
         </div>
       </div>
