@@ -1,12 +1,12 @@
-<div class="container-fluid first-content">
+<div class="container-fluid first-content bg-black">
   <div class="row d-flex align-items-center justify-content-center">
     <div class="col-md-4 my-4">
       <div class="col-md-10">
-        <h1 class="mb-4">Bem-vinde ao <span>Blog pessoal</span></h1>
-        <p>Expresse aqui seus pensamentos e opiniões!</p>
+        <h1 class="mb-4 text-light">Bem-vinde ao <span id="text-purple">Blog pessoal</span></h1>
+        <p class="text-light">Expresse aqui seus pensamentos e opiniões!</p>
       </div>
       <div class="col-md-12">
-        <button class="btn btn-postagem mr-3 mt-2" data-toggle="modal" data-target="#novaPostagem">Nova postagem</button>
+        <button class="btn btn-postagem mr-3 mt-2 text-light" data-toggle="modal" data-target="#novaPostagem">Nova postagem</button>
         <button class="btn btn-ver mt-2"><a href="#postagens">Ver postagens</a></button>
       </div>
     </div>
@@ -29,6 +29,7 @@
         aria-controls="postagensTema" aria-selected="false">Postagens por tema</a>
     </div>
   </nav>
+
   <div class="tab-content" id="nav-tabContent">
     <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel" aria-labelledby="todasPostagens-tab">
       Todas as postagens</div>
@@ -39,7 +40,7 @@
   </div>
 </div>
 
-<div class="modal fade " id="novaPostagem" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="novaPostagem" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
@@ -51,14 +52,14 @@
       <div class="modal-body">
         <div class="form-group">
           <label for="titulo">Título</label>
-          <input type="text" class="form-control" id="titulo" placeholder="Digite o título da nova postagem">
+          <input type="text" class="form-control text-black" id="titulo" placeholder="Digite o título da nova postagem">
         </div>
         <div class="form-group">
           <label for="texto">Texto</label>
-          <textarea type="text" class="form-control" id="texto" rows="3"></textarea>
+          <textarea type="text" class="form-control text-black" id="texto" rows="3"></textarea>
         </div>
         <div class="form-group">
-          <label for="tema">Escolha um tema ou <a href="" class="text-dark"><strong>cadastre um novo</strong></a></label>
+          <label for="tema">Escolha um tema ou <a routerLink='/tema' class="text-black" data-dismiss="modal"><strong>cadastre um novo</strong></a></label>
           <select class="form-control" id="tema">
             <option value="">Temas</option>
           </select>

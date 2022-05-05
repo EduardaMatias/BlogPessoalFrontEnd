@@ -1,4 +1,3 @@
-<app-menu></app-menu>
-<!--
-    <app-rodape *ngIf='authService.logado()'></app-rodape>-->
+<app-menu *ngIf='authService.logado()'></app-menu>
 <router-outlet></router-outlet> <!--rotas dinamicas-->
+<app-rodape *ngIf='authService.logado()'></app-rodape>

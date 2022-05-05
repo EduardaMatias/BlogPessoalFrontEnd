@@ -1,5 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
-
 html{
     scroll-behavior: smooth;
 }
+
+.bg-black{
+    background-color: #000;
+}
+
+.text-black{
+    color: #000;
+}
+
+#bg-purple{
+    background-color: #7D89E7;
+}
+
+#text-purple{
+    color: #7D89E7;
+}
+
+#btn:focus{
+    box-shadow: none;
+}
+
+

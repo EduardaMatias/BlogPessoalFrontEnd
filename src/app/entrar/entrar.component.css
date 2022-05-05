@@ -1,8 +1,8 @@
 button{
-    background-color: #7D89E7;
     color: #fff;
     font-weight: 500;
     border: 1px solid #7D89E7;
+    background-color: #7D89E7;
     transition: 2s;
 }
 
@@ -16,4 +16,5 @@ input:focus{
     border-color: #02020297;
     box-shadow: none;
 }
+
 
