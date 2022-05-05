@@ -2,8 +2,8 @@
   <div class="row align-items-center">
     <div class="col-md-6">
       <div class="row d-flex justify-content-center ">
-        <div class="col-md-8">
-          <h1 class="text-center text-dark mb-5">Entrar</h1>
+        <div class="entrar col-md-8">
+          <h1 class="text-center text-dark mb-5 mt-2">Entrar</h1>
 
           <form>
             <div class="form-group">
@@ -14,7 +14,7 @@
               <label for="">Senha</label>
               <input  [(ngModel)]='usuarioLogin.senha' type="password" class="form-control" name="senha">
             </div>
-            <button class="btn btn-outline-dark w-100 d-block mx-auto" (click)="entrar()">Entrar</button>
+            <button class="btn w-100 d-block mx-auto" (click)="entrar()">Entrar</button>
           </form>
 
           <hr>

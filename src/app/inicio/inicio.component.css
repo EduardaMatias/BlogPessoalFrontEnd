@@ -1,9 +1,19 @@
 .container-fluid{
     background-color: #000;
+    padding-top: 80px;
+    padding-bottom: 80px;
 }
 
 .first-content .row .col-md-4 h1{
     color: #fff;
+    font-size: 3rem;
+    margin-bottom: 30px;
+}
+
+.first-content .row .col-md-4 p{
+    color: #fff;
+    font-size: 1.2rem;
+    font-style: italic;
     margin-bottom: 30px;
 }
 
@@ -14,6 +24,12 @@
 .first-content .row .col-md-4 button{
     width: 150px;
     transition: 1s;
+}
+
+.first-content .row .col-md-4 button a{
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
 }
 
 .first-content .row .col-md-4 .btn-postagem{
@@ -30,8 +46,6 @@
     border: 3px solid #7D89E7;
     border-radius: 5px;
     background-color: #7D89E7;
-    color: #fff;
-    font-weight: 500;
 }
 
 .first-content .row .col-md-4 button:focus{
