@@ -70,28 +70,32 @@
 }
 
 input{
-    border: solid 1px black;
+    border: solid 1px rgba(123, 123, 123, 0.583);
 }
 
 input:focus{
     box-shadow: none;
-    border: solid 1px black;
+    border: solid 1px rgba(123, 123, 123, 0.583);
 }
 
 select{
-    border: solid 1px black;
+    border: solid 1px rgba(123, 123, 123, 0.583);
 }
 
 select:focus{
     box-shadow: none;
-    border: solid 1px black;
+    border: solid 1px rgba(123, 123, 123, 0.583);
 }
 
 textarea{
-    border: solid 1px black;
+    border: solid 1px rgba(123, 123, 123, 0.583);
 }
 
 textarea:focus{
     box-shadow: none;
-    border: solid 1px black;
+    border: solid 1px rgba(123, 123, 123, 0.583);
+}
+
+button:focus{
+    box-shadow: none;
 }

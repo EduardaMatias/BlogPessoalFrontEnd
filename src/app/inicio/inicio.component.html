@@ -65,6 +65,9 @@
               <h5 class="card-title m-0">{{item.titulo}}</h5>
               <small>Tema: {{item.tema.descricao}}</small>
               <p class="card-text mt-2">{{item.texto}}</p>
+
+              <a [routerLink]="['/postagem-edit', item.id]" class="btn btn-info mr-3" href="">Editar</a>
+              <a [routerLink]="['/postagem-delete', item.id]" class="btn btn-danger" href="">Apagar</a>
             </div>
           </div>
         </div>

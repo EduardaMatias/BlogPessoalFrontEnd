@@ -34,6 +34,4 @@ export class TemaService {
   deleteTema(id: number){
     return this.http.delete(`https://blogpessoaleduarda.herokuapp.com/tema/${id}`, this.token)
   }
-
-
 }

@@ -1,0 +1,40 @@
+<div class="container-fluid py-5">
+
+  <div class="row">
+    <div class="col-md-12">
+      <h2 class="text-black mt-5 text-center">Atualizar postagem</h2>
+    </div>
+  </div>
+
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-6">
+
+      <div class="modal-body my-5">
+        <div class="form-group">
+          <label for="titulo">Título</label>
+          <input [(ngModel)]='postagem.titulo' type="text" class="form-control text-black" id="titulo"
+            placeholder="Digite o título da nova postagem">
+        </div>
+
+        <div class="form-group">
+          <label for="texto">Texto</label>
+          <textarea [(ngModel)]='postagem.texto' type="text" class="form-control text-black" id="texto"
+            rows="3"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="tema">Escolha um tema ou <a routerLink='/tema' class="text-black"
+              data-dismiss="modal"><strong>cadastre um novo</strong></a></label>
+          <select class="form-control" id="tema" [(ngModel)]='idTema' (change)='findByIdTema()'>
+            <option *ngFor='let item of listaTemas' value="{{item.id}}">{{item.descricao}}</option>
+          </select>
+        </div>
+      </div>
+      
+      <div class="mb-5 mt-3 d-flex justify-content-center">
+        <button type="button" class="btn btn-danger mt-2 mr-3" data-dismiss="modal" routerLink='/inicio'>Cancelar</button>
+        <button type="button" class="btn btn-success mt-2" data-dismiss="modal" (click)='atualizar()'>Atualizar</button>
+      </div>
+    </div>
+  </div>
+</div>
