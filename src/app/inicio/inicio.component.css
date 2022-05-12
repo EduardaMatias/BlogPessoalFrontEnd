@@ -68,3 +68,30 @@
 .post:active{
     background-color: #7d89e79d;
 }
+
+input{
+    border: solid 1px black;
+}
+
+input:focus{
+    box-shadow: none;
+    border: solid 1px black;
+}
+
+select{
+    border: solid 1px black;
+}
+
+select:focus{
+    box-shadow: none;
+    border: solid 1px black;
+}
+
+textarea{
+    border: solid 1px black;
+}
+
+textarea:focus{
+    box-shadow: none;
+    border: solid 1px black;
+}
