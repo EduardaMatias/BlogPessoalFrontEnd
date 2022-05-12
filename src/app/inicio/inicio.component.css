@@ -56,3 +56,15 @@
     color: #000;
 }
 
+.post{
+    font-size: 1.2rem;
+    background-color: #7D89E7;
+    border-radius: 5px;
+    color: #fff;
+    text-decoration: none;
+    padding: 20px;
+}
+
+.post:active{
+    background-color: #7d89e79d;
+}
