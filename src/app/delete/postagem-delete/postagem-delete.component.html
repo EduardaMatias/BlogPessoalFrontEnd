@@ -1,1 +1,38 @@
-<p>postagem-delete works!</p>
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-center text-black">Apagar postagem</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h4 class="text-center text-black">Você tem certeza que deseja apagar essa postagem?</h4>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="card-body">
+            <p class="card-text">
+              <small>
+                {{postagem.data | date: 'dd/MM/yyyy'}}
+                às {{postagem.data | date: 'HH:mm'}}
+              </small></p>
+            <h5 class="card-title m-0">{{postagem.titulo}}</h5>
+            <small>Tema: {{postagem.tema.descricao}}</small>
+            <p class="card-text mt-2">{{postagem.texto}}</p>
+          </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class=" col-md-12 d-flex justify-content-center">
+            <div class="mb-5 mt-3 d-flex justify-content-center">
+                <button type="button" class="btn btn-danger mt-2 mr-3" data-dismiss="modal" routerLink='/inicio'>Não</button>
+                <button type="button" class="btn btn-success mt-2" data-dismiss="modal" (click)='apagar()'>Sim</button>
+              </div>
+        </div>
+
+    </div>
+
+
+
+</div>

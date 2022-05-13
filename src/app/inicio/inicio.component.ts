@@ -18,9 +18,11 @@ export class InicioComponent implements OnInit {
 
   postagem: Postagem = new Postagem()
   listaPostagens: Postagem[]
+
   listaTemas: Tema[]
   idTema: number
   tema: Tema = new Tema()
+  
   usuario: Usuario = new Usuario()
   idUsuario = environment.id
 
@@ -80,6 +82,7 @@ export class InicioComponent implements OnInit {
       alert('Postagem realizada com sucesso!')
       this.postagem = new Postagem()
       this.getAllPostagens()
+      this.getAllTema()
     })
   }
 }
