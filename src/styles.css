@@ -22,4 +22,18 @@ html{
     box-shadow: none;
 }
 
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    border-radius: 0px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #7d89e73c;;
+  }
+
 

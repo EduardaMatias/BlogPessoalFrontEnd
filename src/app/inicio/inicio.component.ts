@@ -5,6 +5,7 @@ import { environment } from 'src/environments/environment.prod';
 import { Postagem } from '../model/Postagem';
 import { Tema } from '../model/Tema';
 import { Usuario } from '../model/Usuario';
+import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 import { PostagemService } from '../service/postagem.service';
 import { TemaService } from '../service/tema.service';
@@ -30,7 +31,8 @@ export class InicioComponent implements OnInit {
     private router: Router,
     private postagemService: PostagemService,
     private temaService: TemaService,
-    private authService: AuthService
+    private authService: AuthService,
+    private alert: AlertasService
   ) { }
 
   ngOnInit() {
@@ -79,13 +81,15 @@ export class InicioComponent implements OnInit {
 
     this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) => {
       this.postagem = resp
-      alert('Postagem realizada com sucesso!')
+      this.alert.showAlertSuccess('Postagem realizada com sucesso!')
       this.postagem = new Postagem()
       this.getAllPostagens()
       this.getAllTema()
     }, erro => {
       if (erro.status == 500) {
-        alert('Preencha todos os campos para atualizar seu usuário')
+        this.alert.showAlertDanger('Preencha todos os campos corretamente')
+      } if (erro.status == 400) {
+        this.alert.showAlertDanger('Selecione um tema válido')
       }
     })
   }

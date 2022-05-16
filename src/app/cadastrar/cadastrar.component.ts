@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Usuario } from '../model/Usuario';
+import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 
 @Component({
@@ -23,7 +24,8 @@ export class CadastrarComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private alert: AlertasService
   ) { }
 
   ngOnInit() {
@@ -42,21 +44,21 @@ export class CadastrarComponent implements OnInit {
     this.usuario.tipo = this.tipoUser
 
     if (this.usuario.senha != this.confirmSenha) {
-      alert('As senhas não coincidem!')
+      this.alert.showAlertDanger('As senhas não coincidem!')
     } else if(this.nomeOk != true || 
       this.emailOk != true || 
       this.senhaOk != true || 
       this.confirmSenhaOk != true || 
       this.selectOk != true){
-      alert('Prencha todos os campos corretamente!')
+      this.alert.showAlertDanger('Prencha todos os campos corretamente!')
     } else {
       this.authService.cadastrar(this.usuario).subscribe((resp: Usuario) => {
         this.usuario = resp
         this.router.navigate(['/entrar'])
-        alert('Usuário cadastrado com sucesso!')
+        this.alert.showAlertSuccess('Usuário cadastrado com sucesso!')
       }, erro => {
         if (erro.status == 400) {
-          alert('Usuário já cadastrado! Insira outro email ou faça login.')
+          this.alert.showAlertDanger('Usuário já cadastrado! Insira outro email ou faça login.')
         }
       })
     }

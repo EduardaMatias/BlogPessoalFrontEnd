@@ -1,7 +1,7 @@
 <div class="container-fluid first-content bg-black">
   <div class="row d-flex align-items-center justify-content-center">
     <div class="col-md-4 my-4">
-      <div class="col-md-10">
+      <div class="col-md-12">
         <h1 class="mb-4 text-light">Bem-vindo(a) ao <span id="text-purple">Blog pessoal</span></h1>
         <p class="text-light">Expresse aqui seus pensamentos e opiniões!</p>
       </div>
@@ -163,7 +163,7 @@
           <label for="tema">Escolha um tema ou <a routerLink='/tema' class="text-black"
               data-dismiss="modal"><strong>cadastre um novo</strong> </a></label><small class="text-secondary"> (obrigatório)</small>
           <select class="form-control" id="tema" [(ngModel)]='idTema' (change)='findByIdTema()' placeholder="Selecione um tema">
-            <option selected disabled>Selecione um tema</option>
+            <option selected>Selecione um tema</option>
             <option *ngFor='let item of listaTemas' value="{{item.id}}">{{item.descricao}}</option>
           </select>
         </div>
