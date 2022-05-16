@@ -163,6 +163,7 @@
           <label for="tema">Escolha um tema ou <a routerLink='/tema' class="text-black"
               data-dismiss="modal"><strong>cadastre um novo</strong></a></label>
           <select class="form-control" id="tema" [(ngModel)]='idTema' (change)='findByIdTema()'>
+            <option>Selecione um tema</option>
             <option *ngFor='let item of listaTemas' value="{{item.id}}">{{item.descricao}}</option>
           </select>
         </div>
