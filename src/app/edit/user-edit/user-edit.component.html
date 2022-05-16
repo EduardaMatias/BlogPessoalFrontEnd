@@ -1,0 +1,44 @@
+<div class="container my-5">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="text-center text-black">Atualizar usuario</h1>
+    </div>
+  </div>
+
+  <div class="row  d-flex justify-content-center align-items-center">
+    <div class="col-md-12">
+
+      <form>
+        <div class="form-group">
+          <label for="nome" class="text-black" id="txtNome">Nome</label>
+          <input [(ngModel)]='usuario.nome' type="text" class="form-control" name="nome"
+            id="nome">
+        </div>
+        <div class="form-group">
+          <label for="usuario" class="text-black" id="txtEmail">Email</label>
+          <input [(ngModel)]='usuario.usuario' type="text" class="form-control" name="usuario"
+            id="email">
+        </div>
+        <div class="form-group d-flex flex-column">
+          <label for="foto" class="text-black">Foto<span class="text-muted"> (opcional)</span></label>
+          <input [(ngModel)]='usuario.foto' type="text" class="form-control" name="foto">
+        </div>
+        <div class="form-group">
+          <label for="senha" class="text-black" id="txtSenha">Senha</label>
+          <input (input)='confirmarSenha($event)' type="password" class="form-control"
+            name="senha" id="senha">
+        </div>
+        <div class="form-group">
+          <label for="confirmSenha" class="text-black" id="txtConfirmSenha">Confirmar senha</label>
+          <input [(ngModel)]='usuario.senha' type="password" class="form-control"
+            name="confirmSenha" id="confirmSenha">
+        </div>
+
+        <div class="d-flex justify-content-center mb-5">
+          <button class="btn btn-outline-danger w-50 d-block mr-4" routerLink='/entrar'>Cancelar</button>
+          <button id="button" type="submit" class="btn btn-outline-success w-50 d-block"
+            (click)="atualizar()">Cadastrar</button>
+        </div>
+      </form>
+    </div>
+  </div>

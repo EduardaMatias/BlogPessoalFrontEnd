@@ -1,17 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { Usuario } from '../model/Usuario';
-import { AuthService } from '../service/auth.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Usuario } from 'src/app/model/Usuario';
+import { AuthService } from 'src/app/service/auth.service';
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
-  selector: 'app-cadastrar',
-  templateUrl: './cadastrar.component.html',
-  styleUrls: ['./cadastrar.component.css']
+  selector: 'app-user-edit',
+  templateUrl: './user-edit.component.html',
+  styleUrls: ['./user-edit.component.css']
 })
+export class UserEditComponent implements OnInit {
 
-export class CadastrarComponent implements OnInit {
-
-  usuario: Usuario = new Usuario
+  usuario: Usuario = new Usuario()
+  idUsuario: number
   confirmSenha: string
   tipoUser: string
 
@@ -23,45 +24,62 @@ export class CadastrarComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private router: Router
-  ) { }
+    private router: Router,
+    private route: ActivatedRoute) { }
 
   ngOnInit() {
     window.scroll(0, 0)
+
+    if (environment.token == '') {
+      alert('Sua sessão expirou. Faça o login novamente!')
+      this.router.navigate(['/entrar'])
+    }
+
+    this.idUsuario = this.route.snapshot.params['id']
+    this.findByIdUser(this.idUsuario)
   }
 
   confirmarSenha(event: any) {
     this.confirmSenha = event.target.value
   }
-
+/*
   tipoUsuario(event: any) {
     this.tipoUser = event.target.value
   }
-
-  cadastrar() {
-    this.usuario.tipo = this.tipoUser
-
+*/
+  atualizar() {
     if (this.usuario.senha != this.confirmSenha) {
       alert('As senhas não coincidem!')
-    } else if(this.nomeOk != true || 
+    } /*else if(this.nomeOk != true || 
       this.emailOk != true || 
       this.senhaOk != true || 
       this.confirmSenhaOk != true || 
       this.selectOk != true){
-      alert('Prencha todos os campos corretamente!')
-    } else {
-      this.authService.cadastrar(this.usuario).subscribe((resp: Usuario) => {
+      alert('Prencha todos os campos corretamente!') 
+    }*/ else {
+      this.authService.atualizar(this.usuario).subscribe((resp: Usuario) => {
         this.usuario = resp
         this.router.navigate(['/entrar'])
-        alert('Usuário cadastrado com sucesso!')
+        environment.token = '';
+        environment.foto = '';
+        environment.id = 0;
+        environment.nome = '';
+        alert('Usuário atualizado com sucesso! Faça login novamente')       
       }, erro => {
         if (erro.status == 400) {
-          alert('Usuário já cadastrado! Insira outro email ou faça login.')
+          alert('Preencha todos os campos para atualizar seu usuário')
         }
       })
     }
   }
 
+  findByIdUser(id: number){
+    this.authService.getByIdUsuario(id).subscribe((resp: Usuario) =>{
+      this.usuario = resp
+      this.usuario.senha = ''
+    })
+  }
+/*
   validaNome() {
     let nome = <HTMLInputElement>document.querySelector('#nome')
     let txtNome = <HTMLLabelElement>document.querySelector('#txtNome')
@@ -145,5 +163,7 @@ export class CadastrarComponent implements OnInit {
     } else {
       this.selectOk = true
     }
-  }
+  }*/
 }
+
+

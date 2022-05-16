@@ -7,3 +7,6 @@ input:focus, select:focus{
     box-shadow: none;
 }
 
+.container-fluid{
+    height: 100vh;
+}

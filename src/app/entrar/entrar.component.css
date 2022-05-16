@@ -17,4 +17,8 @@ input:focus{
     box-shadow: none;
 }
 
+.container-fluid{
+    height: 100vh;
+}
+
 

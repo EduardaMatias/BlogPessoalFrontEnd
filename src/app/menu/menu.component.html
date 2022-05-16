@@ -8,8 +8,10 @@
         <li class="nav-item">
           <img [src]="foto" onerror="this.src = 'assets/notfoto.jpg' " alt="imagem de perfil" class="rounded-circle img-fluid" width="50" height="50">
         </li>
-        <li class="nav-item">
-          <a class="nav-link text-light" href="#">Bem vinde {{nome}}!</a>
+        <li class="nav-item d-flex align-items-center">
+          <a class="pl-3 nav-link text-white mr-3">{{nome}}!</a>
+          <a class="nav-link" [routerLink]="['/user-edit', id]"><i class="text-white fa fa-pencil" aria-hidden="true"></i></a>
+          
         </li>
       </ul>
       <div>

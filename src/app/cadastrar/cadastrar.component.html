@@ -1,37 +1,37 @@
-<div class="container-fluid mt-5">
-  <div class="row">
+<div class="container-fluid pt-5">
+  <div class="row d-flex justify-content-center align-items-center">
     <div class="col-md-6">
       <img src="assets/saly1.png" class="img-fluid" alt="Imagem da tela de login">
     </div>
     <div class="col-md-6">
-      <div class="row">
-        <div class="col-md-8">
-          <h1 class="text-center mt-2">Cadastrar</h1>
+      <div class="row  d-flex justify-content-center align-items-center">
+        <div class="col-md-6">
+          <h1 class="text-center text-black my-2">Cadastrar</h1>
 
           <form>
             <div class="form-group">
-              <label for="">Nome</label>
-              <input [(ngModel)]='usuario.nome' type="text" class="form-control" name="nome">
+              <label for="nome" class="text-black" id="txtNome">Nome</label>
+              <input [(ngModel)]='usuario.nome' (input)="validaNome()" type="text" class="form-control" name="nome" id="nome">
             </div>
             <div class="form-group">
-              <label for="">Usuario</label>
-              <input [(ngModel)]='usuario.usuario' type="text" class="form-control" name="usuario">
+              <label for="usuario" class="text-black" id="txtEmail">Email</label>
+              <input [(ngModel)]='usuario.usuario' (input)="validaEmail()" type="text" class="form-control" name="usuario" id="email">
             </div>
             <div class="form-group d-flex flex-column">
-              <label for="">Foto</label>
+              <label for="foto" class="text-black">Foto<span class="text-muted"> (opcional)</span></label>
               <input [(ngModel)]='usuario.foto' type="text" class="form-control" name="foto">
             </div>
             <div class="form-group">
-              <label for="">Senha</label>
-              <input (input)='confirmarSenha($event)' type="password" class="form-control" name="senha">
+              <label for="senha" class="text-black" id="txtSenha">Senha</label>
+              <input (input)='confirmarSenha($event)' (input)="validaSenha()" type="password" class="form-control" name="senha"  id="senha">
             </div>
             <div class="form-group">
-              <label for="">Confirmar senha</label>
-              <input [(ngModel)]='usuario.senha' type="password" class="form-control" name="confirmSenha">
+              <label for="confirmSenha" class="text-black" id="txtConfirmSenha">Confirmar senha</label>
+              <input [(ngModel)]='usuario.senha' (input)="validaConfirmSenha()" type="password" class="form-control" name="confirmSenha" id="confirmSenha">
             </div>
             <div class="form-group">
-              <label for="">Tipo de usuário</label>
-              <select name="tipo" id="tipo" class="form-control" (change)='tipoUsuario($event)'>
+              <label for="tipo" class="text-black">Tipo de usuário</label>
+              <select name="tipo" id="tipo" class="form-control" (change)='tipoUsuario($event)' id="select" (change)="validaSelect()">
                 <option>Selecione um tipo de usuário</option>
                 <option value="normal">Normal</option>
                 <option value="admnistrador">Administrador</option>
@@ -40,12 +40,11 @@
 
             <div class="d-flex justify-content-center mb-5">
               <button class="btn btn-outline-danger w-50 d-block mr-4" routerLink='/entrar'>Cancelar</button>
-              <button class="btn btn-outline-success w-50 d-block" (click)="cadastrar()">Cadastrar</button>
+              <button id="button" type="submit" class="btn btn-outline-success w-50 d-block" (click)="cadastrar()">Cadastrar</button>
             </div>
           </form>
         </div>
       </div>
     </div>
-
   </div>
 </div>
