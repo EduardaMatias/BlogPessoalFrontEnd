@@ -83,6 +83,10 @@ export class InicioComponent implements OnInit {
       this.postagem = new Postagem()
       this.getAllPostagens()
       this.getAllTema()
+    }, erro => {
+      if (erro.status == 500) {
+        alert('Preencha todos os campos para atualizar seu usuário')
+      }
     })
   }
 }

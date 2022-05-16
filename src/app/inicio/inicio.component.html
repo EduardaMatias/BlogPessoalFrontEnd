@@ -150,20 +150,20 @@
       </div>
       <div class="modal-body">
         <div class="form-group">
-          <label for="titulo">Título</label>
+          <label for="titulo">Título <small class="text-secondary"> (obrigatório)</small></label>
           <input [(ngModel)]='postagem.titulo' type="text" class="form-control text-black" id="titulo"
             placeholder="Digite o título da nova postagem">
         </div>
         <div class="form-group">
-          <label for="texto">Texto</label>
+          <label for="texto">Texto <small class="text-secondary">(obrigatório, mínimo 4 caracteres)</small></label>
           <textarea [(ngModel)]='postagem.texto' type="text" class="form-control text-black" id="texto"
-            rows="3"></textarea>
+            rows="3" placeholder="Digite o texto da nova postagem"></textarea>
         </div>
         <div class="form-group">
           <label for="tema">Escolha um tema ou <a routerLink='/tema' class="text-black"
-              data-dismiss="modal"><strong>cadastre um novo</strong></a></label>
-          <select class="form-control" id="tema" [(ngModel)]='idTema' (change)='findByIdTema()'>
-            <option>Selecione um tema</option>
+              data-dismiss="modal"><strong>cadastre um novo</strong> </a></label><small class="text-secondary"> (obrigatório)</small>
+          <select class="form-control" id="tema" [(ngModel)]='idTema' (change)='findByIdTema()' placeholder="Selecione um tema">
+            <option selected disabled>Selecione um tema</option>
             <option *ngFor='let item of listaTemas' value="{{item.id}}">{{item.descricao}}</option>
           </select>
         </div>
