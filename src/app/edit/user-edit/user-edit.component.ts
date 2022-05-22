@@ -51,7 +51,7 @@ export class UserEditComponent implements OnInit {
 */
   atualizar() {
     if (this.usuario.senha != this.confirmSenha) {
-      alert('As senhas não coincidem!')
+      this.alert.showAlertDanger('As senhas não coincidem!')
     } /*else if(this.nomeOk != true || 
       this.emailOk != true || 
       this.senhaOk != true || 
@@ -66,10 +66,10 @@ export class UserEditComponent implements OnInit {
         environment.foto = '';
         environment.id = 0;
         environment.nome = '';
-        alert('Usuário atualizado com sucesso! Faça login novamente')       
+        this.alert.showAlertSuccess('Usuário atualizado com sucesso! Faça login novamente')       
       }, erro => {
         if (erro.status == 400) {
-          alert('Preencha todos os campos para atualizar seu usuário')
+          this.alert.showAlertDanger('Preencha todos os campos para atualizar seu usuário')
         }
       })
     }

@@ -20,6 +20,7 @@ import { UserEditComponent } from './edit/user-edit/user-edit.component';
 import { AlertaComponent } from './alerta/alerta.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { OrderModule } from 'ngx-order-pipe';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     AppRoutingModule,
     HttpClientModule, 
     FormsModule, BrowserAnimationsModule,
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    OrderModule
   ],
   providers: [{
     provide: LocationStrategy,
