@@ -19,11 +19,12 @@ export class InicioComponent implements OnInit {
 
   postagem: Postagem = new Postagem()
   listaPostagens: Postagem[]
+  tituloPost: string
 
   listaTemas: Tema[]
   idTema: number
   tema: Tema = new Tema()
-  
+
   usuario: Usuario = new Usuario()
   idUsuario = environment.id
 
@@ -39,8 +40,8 @@ export class InicioComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    window.scroll(0,0)
-    
+    window.scroll(0, 0)
+
     if (environment.token == '') {
       this.alert.showAlertDanger('Sua sessão expirou. Faça o login novamente!')
       this.router.navigate(['/entrar'])
@@ -95,5 +96,16 @@ export class InicioComponent implements OnInit {
         this.alert.showAlertDanger('Selecione um tema válido')
       }
     })
+  }
+
+  findByTituloPostagem() {
+
+    if (this.tituloPost == '') {
+      this.getAllPostagens()
+    } else {
+      this.postagemService.getByTituloPostagem(this.tituloPost).subscribe((resp: Postagem[]) => {
+        this.listaPostagens = resp
+      })
+    }
   }
 }

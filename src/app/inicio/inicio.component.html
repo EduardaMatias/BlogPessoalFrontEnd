@@ -27,14 +27,21 @@
         <a (click)='findByIdUsuario()' class="post mb-1" id="v-pills-profile-tab" data-toggle="pill" href="#minhas-postagens" role="tab"
           aria-controls="v-pills-profile" aria-selected="false">Minhas postagens</a>
 
-        <a class="post mb-3" id="v-pills-messages-tab" data-toggle="pill" href="#postagens-tema" role="tab"
-          aria-controls="v-pills-messages" aria-selected="false">Postagens por tema</a>
+          <!--<a class="post mb-3" id="v-pills-messages-tab" data-toggle="pill" href="#postagens-tema" role="tab"
+          aria-controls="v-pills-messages" aria-selected="false">Postagens por tema</a>-->
+        
       </div>
     </div>
     <div class="col-md-9">
       <div class="tab-content" id="v-pills-tabContent">
         <div class="tab-pane fade show active" id="todas-postagens" role="tabpanel" aria-labelledby="v-pills-home-tab">
-          <h2 class="mb-3 text-white">Todas as postagens</h2>
+          <h2 class="my-3 text-white">Todas as postagens</h2>     
+          <div class="row d-flex justify-content-center">
+            <div class="col-md-12">
+              <div class="form-group">
+                <input class="form-control" type="text" id="pesquisa" placeholder="Pesquise o título de uma postagem" name="pesquisa" [(ngModel)]='tituloPost' (keyup)="findByTituloPostagem()">
+              </div>  
+            </div> </div>    
           <div class="card mb-2" *ngFor='let item of listaPostagens | orderBy : key : reverse'>
             <div class="card-body">
               <p class="card-text">
@@ -54,8 +61,8 @@
           </div>
         </div>
 
-        <div class="tab-pane fade" id="minhas-postagens" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-          <h2 class="mb-3 text-white">Minhas postagens</h2>
+        <div class="tab-pane fade" id="minhas-postagens" role="tabpanel" aria-labelledby="v-pills-profile-tab">         
+          <h2 class="my-3 text-white">Minhas postagens</h2>
           <div class="card mb-2" *ngFor='let item of usuario.postagens | orderBy : key : reverse'>
             <div class="card-body">
               <p class="card-text"><small>
@@ -72,8 +79,15 @@
           </div>
         </div>
 
+        <!--
         <div class="tab-pane fade" id="postagens-tema" role="tabpanel" aria-labelledby="v-pills-messages-tab">
           <h2 class="mb-3 text-white">Postagens por tema</h2>
+          <div class="row d-flex justify-content-center">
+            <div class="col-md-12">
+              <div class="form-group">
+                <input class="form-control" type="text" id="pesquisa" placeholder="Pesquise o tema de uma postagem" name="pesquisa" [(ngModel)]='nomeTema' (keyup)="findByNomeTema()">
+              </div>  
+            </div> </div>       
           <div *ngFor='let tema of listaTemas'>
             <div class="card mb-2" *ngFor='let item of tema.postagem | orderBy : key : reverse'>
             <div class="card-body" >
@@ -94,6 +108,7 @@
           </div>
           
         </div>
+      -->
       </div>
     </div>
   </div>
@@ -140,6 +155,13 @@
 -->
 <div class="modal fade" id="novaPostagem" data-backdrop="static" data-keyboard="false" tabindex="-1"
   aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="row d-flex justify-content-center">
+    <!--<div class="col-md-12">
+      <div class="form-group">
+        <input class="form-control" type="text" id="pesquisa" placeholder="Digite um titulo de postagem para pesquisar" name="pesquisa" [(ngModel)]='nomeTema' (keyup)="findByNomeTema()">
+      </div>  
+    </div> </div>-->
+    
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
