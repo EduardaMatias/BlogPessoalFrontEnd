@@ -21,3 +21,13 @@ input:focus{
     height: 100vh;
 }
 
+
+@media (max-width: 770px){
+    img{
+        display: none;
+    }
+
+    h1{
+        margin-bottom: 20px;
+    }
+}
