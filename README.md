@@ -1,5 +1,7 @@
 # BlogPessoal
 
+Acesse o Back-end do projeto clicando [aqui](https://github.com/EduardaMatias/BlogPessoalDeploy)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
 
 ## Development server
